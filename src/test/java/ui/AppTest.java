@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 /**
@@ -16,7 +17,11 @@ public class AppTest {
 	public void launchBrowser() {
 		System.out.println(">>> Launching CHROME browser >>>");
 		System.setProperty("webdriver.chrome.driver", "//home/sunil/Downloads/chromedriver");
-		driver = new ChromeDriver();
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--headless");
+		option.addArguments("--no-sandbox");
+		option.addArguments("--disable-dev-shm-usage");
+		driver = new ChromeDriver(option);
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
