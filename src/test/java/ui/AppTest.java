@@ -15,7 +15,7 @@ public class AppTest {
 	@Test
 	public void launchBrowser() {
 		System.out.println(">>> Launching CHROME browser >>>");
-		System.setProperty("webdriver.chrome.driver", "//home/home/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "//home/sunil/Downloads/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
